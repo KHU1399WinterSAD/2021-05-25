@@ -1,0 +1,21 @@
+.app {
+    background: #1a1a1a;
+    
+    display: grid;
+    place-items: center;
+    
+    width: 100%;
+    min-height: 100vh;
+    
+    .main-container {
+        background: orangered;
+        
+        padding: 1rem;
+        
+        border-radius: 999rem;
+        
+        h1 {
+            color: #fafafa;
+        }
+    }
+}
