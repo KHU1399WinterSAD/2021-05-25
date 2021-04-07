@@ -1,6 +1,23 @@
-* {
+*,
+*:before,
+*:after {
     box-sizing: border-box;
     
     margin: 0;
     padding: 0;
+    
+    border: none;
+    outline: none;
+    
+    font-family: "IRANYekan", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+a {
+    color: inherit;
+    
+    text-decoration: none;
 }
