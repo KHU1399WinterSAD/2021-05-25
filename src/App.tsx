@@ -1,13 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './App.module.scss';
 
 function App() {
-    const [count, setCount] = useState(1);
-    
-    const addToCount = (value: number) => {
-        setCount(count + value);
-    };
-    
     return (
         <div className={styles['app']}>
             <header>
@@ -26,7 +20,52 @@ function App() {
             </header>
             
             <main>
-                <h1>Shop</h1>
+                <h1>Products</h1>
+                
+                <ul className={styles['products']}>
+                    <li>
+                        <img src="" alt=""/>
+                        <h3>Product 1</h3>
+                        <h5>This product is very useful</h5>
+                        <span>5,000</span>
+                        <a href="">view</a>
+                    </li>
+                    <li>
+                        <img src="" alt=""/>
+                        <h3>Product 2</h3>
+                        <h5>This product is very useful</h5>
+                        <span>5,000</span>
+                        <a href="">view</a>
+                    </li>
+                    <li>
+                        <img src="" alt=""/>
+                        <h3>Product 3</h3>
+                        <h5>This product is very useful</h5>
+                        <span>5,000</span>
+                        <a href="">view</a>
+                    </li>
+                    <li>
+                        <img src="" alt=""/>
+                        <h3>Product 4</h3>
+                        <h5>This product is very useful</h5>
+                        <span>5,000</span>
+                        <a href="">view</a>
+                    </li>
+                    <li>
+                        <img src="" alt=""/>
+                        <h3>Product 5</h3>
+                        <h5>This product is very useful</h5>
+                        <span>5,000</span>
+                        <a href="">view</a>
+                    </li>
+                    <li>
+                        <img src="" alt=""/>
+                        <h3>Product 6</h3>
+                        <h5>This product is very useful</h5>
+                        <span>5,000</span>
+                        <a href="">view</a>
+                    </li>
+                </ul>
             </main>
             
             <footer>
