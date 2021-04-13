@@ -74,6 +74,16 @@
 				
 				border-radius: 1rem;
 				
+				transform: scale(1);
+				
+				cursor: pointer;
+				
+				transition: transform 0.1s ease-in-out;
+				
+				&:hover {
+					transform: scale(1.1);
+				}
+				
 				img {
 					grid-area: image;
 					
@@ -83,7 +93,8 @@
 				
 				.descriptions {
 					display: grid;
-					grid-template-areas: "title title" "subtitle subtitle" "price cta";
+					grid-template-areas: "title    price"
+					 										 "subtitle subtitle";
 					align-items: center;
 					gap: 0.5rem;
 					
@@ -91,6 +102,8 @@
 					
 					h3 {
 						grid-area: title;
+						
+						justify-self: flex-start;
 						
 						font-size: 1.6rem;
 						text-align: center;
@@ -104,7 +117,10 @@
 					}
 					
 					span {
+						justify-self: flex-end;
+						
 						grid-area: price;
+						
 						font-size: 1.2rem;
 						font-weight: 500;
 						
@@ -112,23 +128,6 @@
 							content: "$";
 							margin-inline-start: 0.2rem;
 						}
-					}
-					
-					a {
-						grid-area: cta;
-						
-						background: orangered;
-						
-						justify-self: flex-end;
-						
-						width: fit-content;
-						
-						padding: 0.25rem 1rem;
-						
-						border-radius: 999rem;
-						
-						font-size: 1.2rem;
-						font-weight: 500;
 					}
 				}
 			}
