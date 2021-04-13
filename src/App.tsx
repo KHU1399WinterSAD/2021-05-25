@@ -24,46 +24,58 @@ function App() {
 				
 				<ul className={styles['products']}>
 					<li>
-						<img src="" alt=""/>
-						<h3>Product 1</h3>
-						<h5>This product is very useful</h5>
-						<span>5,000</span>
-						<a href="">view</a>
+						<img src="/assets/images/product.png" alt=""/>
+						<div className={styles['descriptions']}>
+							<h3>Product 1</h3>
+							<h5>This product is very useful</h5>
+							<span>5,000</span>
+							<a href="">view</a>
+						</div>
 					</li>
 					<li>
-						<img src="" alt=""/>
-						<h3>Product 2</h3>
-						<h5>This product is very useful</h5>
-						<span>5,000</span>
-						<a href="">view</a>
+						<img src="/assets/images/product.png" alt=""/>
+						<div className={styles['descriptions']}>
+							<h3>Product 2</h3>
+							<h5>This product is very useful</h5>
+							<span>5,000</span>
+							<a href="">view</a>
+						</div>
 					</li>
 					<li>
-						<img src="" alt=""/>
-						<h3>Product 3</h3>
-						<h5>This product is very useful</h5>
-						<span>5,000</span>
-						<a href="">view</a>
+						<img src="/assets/images/product.png" alt=""/>
+						<div className={styles['descriptions']}>
+							<h3>Product 3</h3>
+							<h5>This product is very useful</h5>
+							<span>5,000</span>
+							<a href="">view</a>
+						</div>
 					</li>
 					<li>
-						<img src="" alt=""/>
-						<h3>Product 4</h3>
-						<h5>This product is very useful</h5>
-						<span>5,000</span>
-						<a href="">view</a>
+						<img src="/assets/images/product.png" alt=""/>
+						<div className={styles['descriptions']}>
+							<h3>Product 4</h3>
+							<h5>This product is very useful</h5>
+							<span>5,000</span>
+							<a href="">view</a>
+						</div>
 					</li>
 					<li>
-						<img src="" alt=""/>
-						<h3>Product 5</h3>
-						<h5>This product is very useful</h5>
-						<span>5,000</span>
-						<a href="">view</a>
+						<img src="/assets/images/product.png" alt=""/>
+						<div className={styles['descriptions']}>
+							<h3>Product 5</h3>
+							<h5>This product is very useful</h5>
+							<span>5,000</span>
+							<a href="">view</a>
+						</div>
 					</li>
 					<li>
-						<img src="" alt=""/>
-						<h3>Product 6</h3>
-						<h5>This product is very useful</h5>
-						<span>5,000</span>
-						<a href="">view</a>
+						<img src="/assets/images/product.png" alt=""/>
+						<div className={styles['descriptions']}>
+							<h3>Product 6</h3>
+							<h5>This product is very useful</h5>
+							<span>5,000</span>
+							<a href="">view</a>
+						</div>
 					</li>
 				</ul>
 			</main>
