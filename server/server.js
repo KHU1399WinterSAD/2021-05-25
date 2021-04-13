@@ -1,7 +1,9 @@
 const express = require('express');
+const cors = require('cors');
 const Product = require('./models/Product');
 
 const app = express();
+app.use(cors());
 
 app.get('/products', (req, res) => {
 	const productsCount = 10;

@@ -1,9 +1,18 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './App.module.scss';
 import {Product} from './models/Product';
 
+const SERVER_PRODUCTS_URL = 'http://localhost:5000/products';
+
 function App() {
+	const [products, setProducts] = useState<Product[]>([]);
 	
+	useEffect(() => {
+		fetch(SERVER_PRODUCTS_URL)
+		.then(res => res.json())
+		.then(data => setProducts(data))
+		.catch(err => console.error(err));
+	}, []);
 	
 	return (
 		<div className={styles['app']}>
