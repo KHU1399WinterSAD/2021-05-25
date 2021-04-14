@@ -1,0 +1,20 @@
+{
+	"name": "KHU1399WinterSAD",
+	"version": "1.0.0",
+	"scripts": {
+		"install": "npm i && cd server && npm i && cd .. && cd client && npm i",
+		"server": "cd server && npm start",
+		"client": "cd client && npm start",
+		"start": "concurrently  \"npm run server\" \"npm run client\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/KHU1399WinterSAD/2021-04-14.git"
+	},
+	"author": "BijanProgrammer",
+	"license": "MIT",
+	"homepage": "https://github.com/KHU1399WinterSAD/",
+	"dependencies": {
+		"concurrently": "^6.0.2"
+	}
+}
