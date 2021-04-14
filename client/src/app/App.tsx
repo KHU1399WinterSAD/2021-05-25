@@ -16,7 +16,7 @@ function App() {
 
 			<main>
 				<Switch>
-					<Route path="/" component={Home} />{' '}
+					<Route path="/" exact component={Home} />
 					<Route path="/products" component={Products} />
 				</Switch>
 			</main>

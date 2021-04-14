@@ -1,20 +1,21 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import styles from './Header.module.scss';
 
 const Header = () => {
 	return (
 		<header>
-			<a href="/" className={styles['logo']}>
+			<Link to="/" className={styles['logo']}>
 				Kharazmi Shop Center
-			</a>
+			</Link>
 			<nav>
 				<ul>
 					<li>
-						<a href="/">Home</a>
+						<Link to="/">Home</Link>
 					</li>
 					<li>
-						<a href="/products">Products</a>
+						<Link to="/products">Products</Link>
 					</li>
 				</ul>
 			</nav>
