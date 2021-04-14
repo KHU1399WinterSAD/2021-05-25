@@ -1,0 +1,17 @@
+.app {
+	background: #1a1a1a;
+	color: #fafafa;
+
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+	min-height: 100vh;
+
+	> * {
+		padding: 1rem 2rem;
+	}
+
+	main {
+	}
+}

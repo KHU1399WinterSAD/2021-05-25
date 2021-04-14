@@ -1,0 +1,37 @@
+header {
+	display: flex;
+	align-items: center;
+
+	.logo {
+		justify-self: flex-start;
+
+		width: fit-content;
+
+		font-size: 2.4rem;
+	}
+
+	nav {
+		flex: 1;
+		justify-self: center;
+
+		ul {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			gap: 1rem;
+
+			list-style: none;
+
+			li {
+				font-size: 1.4rem;
+			}
+		}
+	}
+
+	.github {
+		justify-self: flex-end;
+
+		font-size: 1.8rem;
+	}
+}
