@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 
 import styles from './Products.module.scss';
-import {Product} from '../../models/Product';
+import {ProductModel} from '../../models/ProductModel';
 
 const SERVER_PRODUCTS_URL = 'http://localhost:5000/products';
 
 const Products = () => {
-	const [products, setProducts] = useState<Product[]>([]);
+	const [products, setProducts] = useState<ProductModel[]>([]);
 
 	useEffect(() => {
 		fetch(SERVER_PRODUCTS_URL)
@@ -21,7 +21,7 @@ const Products = () => {
 
 			<ul>
 				{products.map((product, i) => (
-					<li key={i}>
+					<li key={i} className="card">
 						<img src={product.image} alt="" />
 						<div className={styles['descriptions']}>
 							<h3>{product.title}</h3>
