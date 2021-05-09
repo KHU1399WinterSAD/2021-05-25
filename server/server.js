@@ -23,7 +23,7 @@ app.get('/products', (req, res) => {
 	res.send(products);
 });
 
-app.get('/products/:id', (req, res) => {
+app.get('/product/:id', (req, res) => {
 	const {id} = req.params;
 	
 	if (1 <= id && id <= products.length)
