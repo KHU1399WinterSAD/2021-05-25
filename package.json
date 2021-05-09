@@ -2,7 +2,7 @@
 	"name": "KHU1399WinterSAD",
 	"version": "1.0.0",
 	"scripts": {
-		"install": "npm i && cd server && npm i && cd .. && cd client && npm i",
+		"in": "npm i && cd server && npm i && cd .. && cd client && npm i",
 		"server": "cd server && npm start",
 		"client": "cd client && npm start",
 		"start": "concurrently  \"npm run server\" \"npm run client\""
@@ -14,8 +14,7 @@
 	"author": "BijanProgrammer",
 	"license": "MIT",
 	"homepage": "https://github.com/KHU1399WinterSAD/",
-	"dependencies": {
-	},
+	"dependencies": {},
 	"devDependencies": {
 		"prettier": "^2.2.1",
 		"@typescript-eslint/eslint-plugin": "^4.22.0",

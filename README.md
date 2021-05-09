@@ -4,7 +4,7 @@
 
 In the project directory, you can run:
 
-### `npm install` or `npm i`
+### `npm in`
 
 Runs installation script for main folder, client and server.
 
