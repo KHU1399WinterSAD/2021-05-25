@@ -6,17 +6,37 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 import styles from './ShoppingCard.module.scss';
 
-const SERVER_PRODUCTS_URL = 'http://localhost:5000/products';
+const SERVER_SHOPPING_CARD_URL = 'http://localhost:5000/shopping-card/';
 
 const ShoppingCard = () => {
 	const [products, setProducts] = useState<ProductModel[]>([]);
 	
-	useEffect(() => {
-		fetch(SERVER_PRODUCTS_URL)
+	const getAllProductsInShoppingCard = () => {
+		fetch(SERVER_SHOPPING_CARD_URL)
 		.then((res) => res.json())
 		.then((data) => setProducts(data))
 		.catch((err) => console.error(err));
-	}, []);
+	};
+	
+	useEffect(getAllProductsInShoppingCard, []);
+	
+	const changeQuantity = (id: string, increase: boolean) => {
+		fetch(SERVER_SHOPPING_CARD_URL, {
+			method: 'post',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({id, increase}),
+		})
+		.then(getAllProductsInShoppingCard)
+		.catch();
+	};
+	
+	const clickedOnRemoveButton = (id: string) => {
+		fetch(SERVER_SHOPPING_CARD_URL + id, {method: 'delete'})
+		.then(getAllProductsInShoppingCard)
+		.catch();
+	};
 	
 	return (
 		<div className={styles['shopping-card']}>
@@ -34,11 +54,11 @@ const ShoppingCard = () => {
 							<h5>{product.subtitle}</h5>
 							<div className={styles['footer']}>
 								<div className={styles['quantity']}>
-									<span className={styles['minus']}>-</span>
-									<span className={styles['number']}>1</span>
-									<span className={styles['plus']}>+</span>
+									<span className={styles['minus']} onClick={() => changeQuantity(product.id, false)}>-</span>
+									<span className={styles['number']}>{product.quantity}</span>
+									<span className={styles['plus']} onClick={() => changeQuantity(product.id, true)}>+</span>
 								</div>
-								<div className={styles['remove-button']}>
+								<div className={styles['remove-button']} onClick={() => clickedOnRemoveButton(product.id)}>
 									<div className={styles['icon']}>
 										<DeleteIcon/>
 									</div>

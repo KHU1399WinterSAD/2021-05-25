@@ -11,6 +11,7 @@ import CreateIcon from '@material-ui/icons/Create';
 import styles from './Product.module.scss';
 
 const SERVER_PRODUCT_URL = 'http://localhost:5000/product/';
+const SERVER_SHOPPING_CARD_URL = 'http://localhost:5000/shopping-card/';
 
 const Product = () => {
 	const {id} = useParams<{ id?: string | undefined }>();
@@ -35,8 +36,15 @@ const Product = () => {
 			return res.json();
 		})
 		.then((data) => setProduct(data))
-		.catch(() => {});
+		.catch();
 	}, []);
+	
+	const clickedOnAddItemToShoppingCard = () => {
+		fetch(SERVER_SHOPPING_CARD_URL + id, {method: 'put'})
+		.then(res => res.json)
+		.then()
+		.catch();
+	};
 	
 	if (!product)
 		return result;
@@ -75,7 +83,7 @@ const Product = () => {
 						<div className={styles['label']}>KHU Price</div>
 						<div className={['price', styles['number']].join(' ')}>{product.price.toLocaleString()}</div>
 					</div>
-					<button>Add to Shopping Card</button>
+					<button onClick={clickedOnAddItemToShoppingCard}>Add to Shopping Card</button>
 				</div>
 			</div>
 			<div className={styles['description']}>
