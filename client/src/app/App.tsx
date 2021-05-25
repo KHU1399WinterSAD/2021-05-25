@@ -5,8 +5,9 @@ import {Redirect} from 'react-router-dom';
 import styles from './App.module.scss';
 
 import Home from './pages/Home/Home';
-import Products from './pages/Products/Products';
 import Product from './pages/Product/Product';
+import Products from './pages/Products/Products';
+import ShoppingCard from './pages/ShoppingCard/ShoppingCard';
 import NotFound from './pages/NotFound/NotFound';
 
 import Header from './components/Header/Header';
@@ -22,6 +23,7 @@ function App() {
 					<Route path="/" exact component={Home}/>
 					<Route path="/products" component={Products}/>
 					<Route path="/product/:id" component={Product}/>
+					<Route path="/shopping-card" component={ShoppingCard}/>
 					<Route path="/404" component={NotFound}/>
 					<Route>
 						<Redirect to="/404"/>
