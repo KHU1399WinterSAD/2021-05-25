@@ -1,78 +1,175 @@
-.products {
-	ul {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 2rem;
+.product {
+	display: grid;
+	grid-template-areas: "image card" "description description";
+	grid-template-columns: auto 1fr;
+	gap: 1rem;
+	
+	max-width: 80rem;
+	height: fit-content;
+	
+	margin-inline: auto;
+	
+	.panel {
+		height: 30rem;
 		
-		list-style: none;
-		
-		li {
-			background: #242424;
+		&--left {
+			grid-area: image;
+			justify-self: flex-end;
 			
-			overflow: hidden;
+			display: flex;
+			justify-content: flex-end;
 			
-			max-width: 20rem;
-			
-			border-radius: 1rem;
-			
-			transform: scale(1);
-			
-			cursor: pointer;
-			
-			transition: transform 0.1s ease-in-out;
-			
-			&:hover {
-				transform: scale(1.1);
-			}
+			width: fit-content;
 			
 			img {
-				grid-area: image;
+				max-height: 100%;
+				width: auto;
 				
-				width: 100%;
-				height: auto;
+				border-radius: 1rem;
 			}
+		}
+		
+		&--right {
+			grid-area: card;
 			
-			.descriptions {
-				display: grid;
-				grid-template-areas:
-					"title    price"
-					"subtitle subtitle";
-				align-items: center;
-				gap: 0.5rem;
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+			
+			.card {
+				--icon-size: 1.4rem;
+				--icon-gap: 1rem;
 				
-				padding: 0.5rem 1.5rem;
+				display: flex;
+				flex-direction: column;
+				align-items: stretch;
 				
-				h3 {
-					grid-area: title;
-					
-					justify-self: flex-start;
-					
-					font-size: 1.6rem;
-					text-align: center;
+				height: 100%;
+				
+				padding: 2rem;
+				
+				> :not(h1, button) {
+					padding: 1rem 0;
 				}
 				
-				h5 {
-					grid-area: subtitle;
-					
-					font-size: 1.2rem;
-					font-weight: 300;
+				.warranty,
+				.stock {
+					border-bottom: 0.1rem solid rgb(204 204 204 / 50%);
 				}
 				
-				span {
-					justify-self: flex-end;
+				.warranty,
+				.stock,
+				.subtitle {
+					display: flex;
+					flex-direction: row;
+					align-items: flex-start;
+					gap: var(--icon-gap);
+				}
+				
+				.warranty,
+				.stock {
+					.icon,
+					.title {
+						font-size: var(--icon-size);
+					}
 					
-					grid-area: price;
+					.icon {
+						display: grid;
+						place-items: center;
+						
+						svg {
+							height: 1.5em;
+							
+							font-size: 1em;
+						}
+					}
 					
-					font-size: 1.2rem;
-					font-weight: 500;
-					
-					&::after {
-						content: "$";
-						margin-inline-start: 0.2rem;
+					.desc {
+						.title {
+							
+						}
+						
+						.subtitle {
+							> * {
+								color: #cccccc;
+								
+								font-size: 1.2rem;
+							}
+						}
 					}
 				}
+				
+				.warranty {
+				}
+				
+				.stock {
+					
+				}
+				
+				.price {
+					.label {
+						color: #cccccc;
+						
+						font-size: 1.2rem;
+					}
+					
+					.number {
+						font-size: 1.6rem;
+						font-weight: bold;
+						
+						&::before {
+							content: "";
+							
+							display: inline-block;
+							
+							width: calc(var(--icon-size) + var(--icon-gap));
+							height: var(--icon-size);
+						}
+					}
+				}
+				
+				button {
+					background: #ff0040;
+					color: #fafafa;
+					
+					align-self: flex-end;
+				}
+			}
+		}
+	}
+	
+	.description {
+		grid-area: description;
+		
+		.title {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			
+			> * {
+				font-size: 1.8rem;
+				font-weight: bold;
+			}
+			
+			.icon {
+				display: flex;
+				
+				svg {
+					font-size: 1em;
+				}
+			}
+		}
+		
+		p {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			
+			font-size: 1.4rem;
+			text-align: justify;
+			
+			span {
+				display: block;
 			}
 		}
 	}

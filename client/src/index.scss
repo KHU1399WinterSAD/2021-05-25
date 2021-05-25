@@ -9,7 +9,7 @@
 	border: none;
 	outline: none;
 	
-	font-family: "IRANYekan", sans-serif;
+	font-family: "Roboto", sans-serif;
 	line-height: 150%;
 }
 
@@ -28,20 +28,27 @@ a {
 	text-decoration: none;
 }
 
+button {
+	padding: 0.5rem 1rem;
+	
+	border-radius: 999rem;
+	
+	font-weight: bold;
+	
+	cursor: pointer;
+}
+
 .card {
 	background: #242424;
 	
 	overflow: hidden;
 	
 	border-radius: 1rem;
-	
-	transform: scale(1);
-	
-	cursor: pointer;
-	
-	transition: transform 0.1s ease-in-out;
-	
-	&:hover {
-		transform: scale(1.1);
+}
+
+.price {
+	&::after {
+		content: "$";
+		margin-inline-start: 0.2rem;
 	}
 }

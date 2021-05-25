@@ -28,7 +28,7 @@ const Products = () => {
 							<div className={styles['descriptions']}>
 								<h3>{product.title}</h3>
 								<h5>{product.subtitle}</h5>
-								<span>{product.price}</span>
+								<span className="price">{product.price}</span>
 							</div>
 						</Link>
 					</li>
